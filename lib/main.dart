@@ -7,6 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final noun = new WordNoun.random();
+    final adjective = new WordAdjective.random();
     return new MaterialApp(
       title: 'Word Game',
       home: new Scaffold(
@@ -15,7 +16,10 @@ class MyApp extends StatelessWidget {
           ),
         body: new Center(
           child: new Text (
-            'Noun: ${noun.asCapitalized}'),
+            "The programmer wrote a ${adjective.asCapitalized}"
+            "app in Flutter and showed it"
+            "off to his ${noun.asCapitalized}"
+            ),
         ),
       ),
     );
