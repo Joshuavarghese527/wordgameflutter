@@ -15,13 +15,27 @@ class MyApp extends StatelessWidget {
           title: new Text('Word Game'),
           ),
         body: new Center(
-          child: new Text (
-            "The programmer wrote a ${adjective.asCapitalized}"
-            "app in Flutter and showed it"
-            "off to his ${noun.asCapitalized}"
-            ),
+          child: new RandomSentences()
         ),
       ),
     );
+  }
+}
+
+
+class RandomSentences extends StatefulWidget {
+  @override
+  createState() => new _RandomSentencesState();
+}
+
+class _RandomSentencesState extends State<RandomSentences> {
+  @override 
+  Widget build(BuildContext context) {
+    final noun = new WordNoun.random();
+    final adjective = new WordAdjective.random();
+    return new Text (
+        "The programmer wrote a ${adjective.asCapitalized}"
+        "app in Flutter and showed it"
+        "off to his ${noun.asCapitalized}");
   }
 }
